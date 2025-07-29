@@ -4,7 +4,7 @@ from openai import OpenAI
 import json
 
 base_url = "https://api.aimlapi.com/v1"
-api_key = "2c43eb2b185545dcbfa1be051df6f2c8"  # 请确保这个 API key 是有效且已激活的
+api_key = "2c43eb2b185545dcbfa1be051df6f2c8"  
 
 system_prompt = '''You are a sign language coreference resolution assistant. 
 Input:
@@ -46,7 +46,7 @@ api = OpenAI(api_key=api_key, base_url=base_url)
 def main():
     print("开始第一轮 API 调用...")
     try:
-        # 第一轮调用
+
         first = api.chat.completions.create(
             model="gpt-4o",
             messages=[
@@ -61,7 +61,7 @@ def main():
         assistant_reply = first.choices[0].message.content
         print("Assistant 回答：", assistant_reply)
 
-        # 构造第二轮的 follow-up 提问
+        
         follow_up = (
             "Please, in English, expand the description for each entity cluster (all entity IDs). "
             "For every entity, explain what it represents and why the glosses were grouped into that cluster."
