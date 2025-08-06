@@ -13,7 +13,7 @@ from prompts import prompt_7
 
 # system and user prompt
 system_prompt = '''You are a sign language coreference resolution assistant.  
-Input: a list of glosses, speaker A & B are having a conversaiton, sentences(words seperated by comma or full stop) are seperated by '''''', each gloss with a unique gloss ID.  
+Input: a list of glosses, speaker A & B are having a conversation, sentences(words seperated by comma or full stop) are seperated by '''''', each gloss with a unique gloss ID.  
 1. Identify which glosses refer to entities.  
 2. Cluster glosses that refer to the same entity.  
 
